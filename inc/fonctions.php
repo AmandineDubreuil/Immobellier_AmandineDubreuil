@@ -143,3 +143,12 @@ function uploadImage($image)
         }
     }
 }
+
+function suppAnnonceById(int $idAnnonce): bool
+{
+   require 'pdo.php';
+   $sqlRequest = "DELETE FROM annonces WHERE id_annonce = :idAnnonce";
+   $resultat = $conn->prepare($sqlRequest);
+   $resultat->bindValue(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
+   return $resultat->execute();
+}

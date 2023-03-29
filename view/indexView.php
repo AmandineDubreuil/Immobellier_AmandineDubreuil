@@ -40,7 +40,7 @@
                 <p>description : <?= $annonce['description'] ?></p>
                 <p>Superficie : <?= $annonce['surface'] ?> m2</p>
                 <p>Nombre de pièces : <?= $annonce['room'] ?></p>
-                <p class="gras">Prix : <?= $annonce['price'] ?></p>
+                <p><span class="gras"> Prix : <?= $annonce['price'] ?> €</span> frais d'agence inclus</p>
             </article>
             <?php
                 endforeach;
