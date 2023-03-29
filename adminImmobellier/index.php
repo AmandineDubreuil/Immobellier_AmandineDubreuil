@@ -1,6 +1,6 @@
 <?php
 /*
-* Page qui appel la vue pour la gestion des biens immobiliers
+* Page qui appelle la vue pour la gestion des biens immobiliers
 */
 session_start();
 include '../inc/fonctions.php';
