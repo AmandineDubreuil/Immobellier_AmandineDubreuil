@@ -1,0 +1,170 @@
+/* mise à 0 */
+:root {
+    --color-one: #121212;
+    --color-onelight: #2d2d2d;
+    --color-two: #909090;
+    --color-twodark: #7a7a7a;
+  
+    --color-three: #b3b3b3;
+    --color-threelight: #c1c0c0;
+    --color-four: #f6f2f2;
+    --color-fourdark: #dfdcdc;
+  
+    --color-five: #ffffff;
+    --color-six: #73ce59;
+    --color-sixdark: #65b44e;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  img {
+    width: 100%;
+  }
+  
+  /* général */
+  
+  h1 {
+    /* margin: 3rem 0; */
+    padding: 2.5rem 1rem;
+    background-color: var(--color-one);
+    color: var(--color-six);
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: center;
+    -webkit-box-shadow: 5px 5px 15px -2px #000000;
+    box-shadow: 5px 5px 15px -2px #000000;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    padding: 0 1rem 1rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+  p {
+    font-size: 1rem;
+  }
+  a {
+    color: var(--color-one);
+  }
+  .gras {
+    font-weight: 800;
+  }
+  .italic {
+    font-style: italic;
+  }
+  .center {
+    text-align: center;
+  }
+  .droite {
+    text-align: right;
+  }
+  .sousligne {
+    text-decoration: underline;
+  }
+  .colorGris {
+    color: var(--color-two);
+  }
+  .dFlex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .spaceBtw {
+    justify-content: space-between;
+  }
+  .dfRight {
+    justify-content: end;
+  }
+  /* bouton couleur */
+  .btn {
+    margin: 1rem;
+    box-shadow: 1px 2px 6px -2px var(--color-one);
+    background: linear-gradient(
+      to bottom,
+      var(--color-six) 5%,
+      var(--color-sixdark) 100%
+    );
+    background-color: var(--color-six);
+    border-radius: 20px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--color-one);
+    font-family: Arial;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+  }
+  .btn:hover {
+    background: linear-gradient(
+      to bottom,
+      var(--color-sixdark) 5%,
+      var(--color-six) 100%
+    );
+    background-color: var(--color-sixdark);
+  }
+  .btn:active {
+    position: relative;
+    top: 1px;
+  }
+  
+  /* bouton gris */
+  .btnInput {
+    margin: 1rem;
+    box-shadow: 1px 2px 6px -2px var(--color-one);
+    background: linear-gradient(
+      to bottom,
+      var(--color-three) 5%,
+      var(--color-threelight) 100%
+    );
+    background-color: var(--color-three);
+    border-radius: 20px;
+    border: none;
+    border-width: 0px;
+    display: inline-block;
+    
+    cursor: pointer;
+    color: var(--color-one);
+    font-family: Arial;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+  }
+  .btnInput:hover {
+    background: linear-gradient(
+      to bottom,
+      var(--color-threelight) 5%,
+      var(--color-three) 100%
+    );
+    background-color: var(--color-threelight);
+  }
+  .btnInput:active {
+    position: relative;
+    top: 1px;
+  }
+  
+  .card {
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    -webkit-box-shadow: 5px 5px 19px -3px rgba(0, 0, 0, 0.45);
+    box-shadow: 5px 5px 19px -3px rgba(0, 0, 0, 0.45);
+    border-radius: 5px;
+  }
+  
+  /* footer */
+  footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--color-one);
+    color: var(--color-six);
+  }
+  
