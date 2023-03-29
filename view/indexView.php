@@ -12,25 +12,27 @@
 <body>
     <header>
         <nav>
-            <h1>Immobellier</h1>
+            
             <p>
                 <?php if (isConnected()) : ?>
                     <?php if (isAdminConnected()) : ?>
-                        <a href="./adminImmobellier/index.php" role="button">Admin</a>
+                        <a class="btn"  href="./adminImmobellier/index.php" role="button">Admin</a>
                     <?php endif ?>
-                    <a href="./login/deconnexion.php">Déconnexion</a>
+                    <a class="btnInput"  href="./login/deconnexion.php">Déconnexion</a>
                 <?php else : ?>
-                    <a href="./register/">Créer un compte</a>
-                    <a href="./login/">Connexion</a>
+                    <a class="btnInput" href="./login/">Connexion</a>
+                    <a class="btnInput"  href="./register/">Créer un compte</a>
+                 
                 <?php endif ?>
             </p>
+            <h1>Immo Bellier</h1>
         </nav>
     </header>
     <main>
     <?php if (isConnected()) : ?>
-        <div><a href="./adminImmobellier/ajout.php">Nouvelle annonce</a></div>
+        <div><a class="btn" href="./adminImmobellier/ajout.php">Nouvelle annonce</a></div>
         <?php endif ?>
-        <section>
+        <section class="section">
         <?php
         if (count(getAnnonceLimit($limit, $offset)) != 0) :
             foreach (getAnnonceLimit($limit, $offset) as $annonce) : ?>

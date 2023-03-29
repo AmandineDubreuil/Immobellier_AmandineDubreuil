@@ -16,7 +16,7 @@ $description = getAnnonceById($id)['description'];
 $type = getAnnonceById($id)['type'];
 $price = getAnnonceById($id)['price'];
 $surface = getAnnonceById($id)['surface'];
-$room = getAnnonceById($id)['room'];
+$roomDb = getAnnonceById($id)['room'];
 $imageDb = getAnnonceById($id)['image'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     $type = nettoieChamps($_POST['type']);
     $price = nettoieChamps($_POST['price']);
     $surface = nettoieChamps($_POST['surface']);
-    $room = nettoieChamps($_POST['room']);
+    $roomModif = nettoieChamps($_POST['room']);
     $imageName = $_FILES["imageUpload"]["name"];
 
     if (!empty($imageName) && $imageName !== $imageDb) :
@@ -34,6 +34,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
         $image = "./uploads/" . basename($_FILES["image"]["name"]);
     else :
         $image = $imageDb;
+
+    endif;
+
+    if (!empty($roomModif) && $roomModif !== $room) :
+      
+       $room = $roomModif;
+    else :
+        $room = $roomDb;
 
     endif;
 

@@ -11,17 +11,17 @@
 <body>
     <main class="container">
         <h2>Connexion à votre compte</h2>
-        <form method="POST" class="form">
+        <form method="POST" class="formConnexion">
             <div>
-                <label for="email">Email</label>
+                <label for="email">Email :</label>
                 <input type="email" name="email" id="email">
             </div>
             <div>
-                <label for="pwd">Mot de passe</label>
+                <label for="pwd">Mot de passe :</label>
                 <input type="password" name="pwd" id="pwd" >
             </div>
             <div>
-                <input type="submit" value="Connexion">
+                <input class="btn" type="submit" value="Connexion">
             </div>
             <div class="errors">
                 <ul class="errors">
