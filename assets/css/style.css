@@ -168,17 +168,17 @@ nav > p {
   border-radius: 5px;
 }
 
-/* formulaire connexion register */
+/* formulaire connexion register ajout */
 
 .formConnexion,
-.formRegister {
+.formRegister, .formAjout {
 width: 30rem;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.formConnexion > div
+.formConnexion > div, .formAjout >div
  {
   display: flex;
   flex-direction: column;
@@ -189,7 +189,7 @@ width: 30rem;
 #last_name,
 #first_name,
 #address, #postal_code, #town,
-#phone {
+#phone, #title, #description, #price, #surface, #room {
   padding: 0.3rem 1rem;
 }
 #email,
@@ -227,7 +227,22 @@ flex-direction: column;
   flex-direction: row;
   justify-content: space-evenly;
  }
- 
+
+ /* ajout annonce  */
+.formAjout{
+  align-items: start;
+}
+#description{
+  width: 30rem;
+  height: 10rem;
+}
+
+
+.formAjout .locVent, .formAjout .annulAjout{
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 
 /* footer */
 footer {

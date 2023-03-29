@@ -10,7 +10,7 @@
 
 <body>
     <main class="container">
-        <h2>Connexion à votre compte</h2>
+        <h1>Connexion à votre compte</h1>
         <form method="POST" class="formConnexion">
             <div>
                 <label for="email">Email :</label>
