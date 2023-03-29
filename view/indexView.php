@@ -31,14 +31,24 @@
         <div><a href="./adminImmobellier/ajout.php">Nouvelle annonce</a></div>
         <?php endif ?>
         <section>
-            <article>
-                <h2>Bien <span>loc/vente</span></h2>
-                <div><img src="" alt=""></div>
-                <p>description</p>
-                <p>Surface : m2</p>
-                <p>Nombre de pièces :</p>
-                <p class="gras">Prix :</p>
+        <?php
+        if (count(getAnnonceLimit($limit, $offset)) != 0) :
+            foreach (getAnnonceLimit($limit, $offset) as $annonce) : ?>
+            <article class="card">
+                <h2><?= $annonce['title'] ?> <span><?= $annonce['type'] ?></span></h2>
+                <div><img src="<?= $annonce['image'] ?>" alt=""></div>
+                <p>description : <?= $annonce['description'] ?></p>
+                <p>Superficie : <?= $annonce['surface'] ?> m2</p>
+                <p>Nombre de pièces : <?= $annonce['room'] ?></p>
+                <p class="gras">Prix : <?= $annonce['price'] ?></p>
             </article>
+            <?php
+                endforeach;
+            else :
+                echo 'Aucun article de disponible.';
+            endif;
+            ?>
+
         </section>
     </main>
 

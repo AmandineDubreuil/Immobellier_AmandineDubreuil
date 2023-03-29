@@ -87,6 +87,20 @@ function isAdminConnected(): bool
 }
 
 /* BDD annonces */
+
+function getAnnonceLimit(int $limit, int $offset): array
+{
+   require 'pdo.php';
+   $sqlRequest = "SELECT id_annonce, title, description, image, type, price, surface, room  FROM `annonces` WHERE 1 ORDER BY id_annonce ASC LIMIT :limit OFFSET :offset";
+   $resultat = $conn->prepare($sqlRequest);
+   $resultat->bindValue(':limit', $limit, PDO::PARAM_INT);
+   $resultat->bindValue(':offset', $offset, PDO::PARAM_INT);
+   $resultat->execute();
+   return $resultat->fetchAll();
+}
+
+
+
 function insertAnnonce( $title,  $description,  $image,  $type,  $price,  $surface,  $room,  $id_utilisateur): int
 {
     require 'pdo.php';
