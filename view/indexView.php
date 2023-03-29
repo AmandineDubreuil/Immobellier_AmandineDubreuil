@@ -5,14 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Immobellier</title>
+    <title>Immo Bellier</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <header>
         <nav>
-            
+        <?php if (isConnected()) : ?>
+            <p class="bienvenue">Bienvenue, <?= $_SESSION['prenom']?> !</p>
+            <?php endif ?>
+
             <p>
                 <?php if (isConnected()) : ?>
                     <?php if (isAdminConnected()) : ?>
@@ -26,6 +29,7 @@
                 <?php endif ?>
             </p>
             <h1>Immo Bellier</h1>
+
         </nav>
     </header>
     <main>
@@ -37,7 +41,7 @@
         if (count(getAnnonceLimit($limit, $offset)) != 0) :
             foreach (getAnnonceLimit($limit, $offset) as $annonce) : ?>
             <article class="card">
-                <h2><?= $annonce['title'] ?> <span><?= $annonce['type'] ?></span></h2>
+                <h2> <span><?= $annonce['type'] ?></span> <?= $annonce['title'] ?></h2>
                 <div><img src="<?= $annonce['image'] ?>" alt=""></div>
                 <p>description : <?= $annonce['description'] ?></p>
                 <p>Superficie : <?= $annonce['surface'] ?> m2</p>

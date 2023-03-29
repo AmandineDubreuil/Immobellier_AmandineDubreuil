@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
             if (password_verify($pwd, chercheEmail($email)['password'])) :
                 $_SESSION['login'] = chercheEmail($email)['role'];
                 $_SESSION['id_utilisateur'] = chercheEmail($email)['id_user'];
+                $_SESSION['prenom'] = chercheEmail($email)['first_name'];
 
                 if (chercheEmail($email)['role'] === 'admin') :
                     redirectUrl('adminImmobellier/');

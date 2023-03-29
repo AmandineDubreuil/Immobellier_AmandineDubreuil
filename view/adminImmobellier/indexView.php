@@ -11,7 +11,12 @@
 
 <body>
     <header>
+
         <nav>
+        <?php if (isConnected()) : ?>
+            <p class="bienvenue">Bienvenue, <?= $_SESSION['prenom']?> !</p>
+            <?php endif ?>
+
             <h1>Admin ImmoBellier</h1>
             <p>
                 <a class="btn"  href="../index.php">Accueil</a>

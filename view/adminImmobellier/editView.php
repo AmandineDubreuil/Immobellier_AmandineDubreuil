@@ -10,6 +10,10 @@
 
 <body>
     <main class="container">
+    <?php if (isConnected()) : ?>
+            <p class="bienvenue">Bienvenue, <?= $_SESSION['prenom']?> !</p>
+            <?php endif ?>
+
         <h1>Modification d'une Annonce</h1>
         <form method="POST" action="" enctype="multipart/form-data" class="formEdit" novalidate>
             <div>

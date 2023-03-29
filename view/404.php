@@ -11,13 +11,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>404 - Immobellier</title>
+    <title>404 - Immo Bellier</title>
 </head>
 
 <body>
     <main class="container">
         <h1>404</h1>
-        <h1>Oups vous vous êtes perdu</h1>
+        <h2>Oups vous vous êtes perdu</h2>
         <p><a href="../">Retour</a></p>
     </main>
 </body>
