@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 29 mars 2023 à 12:08
+-- Généré le : mer. 29 mars 2023 à 13:28
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -38,15 +38,17 @@ CREATE TABLE `annonces` (
   `price` int(8) NOT NULL,
   `surface` int(5) NOT NULL,
   `room` int(1) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `modified_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `annonces`
 --
 
-INSERT INTO `annonces` (`id_annonce`, `title`, `description`, `image`, `type`, `price`, `surface`, `room`, `user_id`) VALUES
-(2, 'Maison Hantée', 'super maison hantée', './uploads/vieille-maison-en-pierre-16359213.jpg', 'Vente', 12000, 120, 3, 1);
+INSERT INTO `annonces` (`id_annonce`, `title`, `description`, `image`, `type`, `price`, `surface`, `room`, `user_id`, `created_at`, `modified_at`) VALUES
+(3, 'maison 5 pièces 230 m²', 'Maison de campagne - environnement calme - vue dominante. Découvrez cette maison de campagne pleine de charme et d’authenticité !\r\nEXTÉRIEUR :\r\nParc clos de 7000m2\r\nVue dominante\r\nParking\r\nChênes truffiers\r\nSans vis à vie\r\nINTÉRIEUR :\r\nSurface habitable 230 m2 environ\r\nGrandes pièces à vivre avec cheminée centrale\r\nCuisine ouverte et équipée\r\nSalle de bain et wc séparés\r\n5 chambres (2 au RDC + 3 à l’étage)\r\nDressing\r\nCellier\r\nMezzanines\r\nDÉPENDANCES :\r\nGrange en pierres\r\nDépendance à rénover\r\nÀ noter :\r\nMaison raccordée à l’eau de puit\r\nAssainissement individuel\r\nTerrain piscinable\r\nAucune nuisance sonore\r\nTaxe foncière 755€\r\nVISITE VIRTUELLE DISPONIBLE SUR DEMANDECe bien vous est présenté par Michel Berron et Marine Donis, vos conseillers indépendants Dr House Immo, joignables par téléphone au , ou par email .', './uploads/demeure.jpg', 'Vente', 260000, 230, 0, 1, '2023-03-29 13:23:17', '2023-03-29 13:26:51');
 
 -- --------------------------------------------------------
 
@@ -103,7 +105,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `annonces`
 --
 ALTER TABLE `annonces`
-  MODIFY `id_annonce` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_annonce` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `users`
@@ -125,5 +127,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
- 
