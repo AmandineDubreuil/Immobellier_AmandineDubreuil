@@ -168,18 +168,21 @@ nav > p {
   border-radius: 5px;
 }
 
-/* formulaire connexion register ajout */
+/* formulaire connexion register ajout modif */
 
 .formConnexion,
-.formRegister, .formAjout {
-width: 30rem;
+.formRegister,
+.formAjout,
+.formEdit {
+  width: 30rem;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.formConnexion > div, .formAjout >div
- {
+.formConnexion > div,
+.formAjout > div,
+.formEdit > div {
   display: flex;
   flex-direction: column;
   margin: 1rem 0 0.5rem 0;
@@ -188,61 +191,90 @@ width: 30rem;
 #pwd,
 #last_name,
 #first_name,
-#address, #postal_code, #town,
-#phone, #title, #description, #price, #surface, #room {
+#address,
+#postal_code,
+#town,
+#phone,
+#title,
+#description,
+#price,
+#surface,
+#room {
   padding: 0.3rem 1rem;
 }
 #email,
-#pwd, #phone {
+#pwd,
+#phone {
   width: 20rem;
 }
-#address{
+#address {
   width: 30rem;
 }
 
 /* formulaire register */
-#nomPrenom, #cpVille{
-display: flex;
+#nomPrenom,
+#cpVille {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 30rem;
   margin: 1rem 0 0.5rem 0;
 }
-#nomPrenom>div, #cpVille>div{
-  display: flex;
-flex-direction: column;
-}
-#contact{
+#nomPrenom > div,
+#cpVille > div {
   display: flex;
   flex-direction: column;
- width: 30rem;
- margin: 1rem 0 0.5rem 0;
 }
-#contact>div{
+#contact {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  margin: 1rem 0 0.5rem 0;
+}
+#contact > div {
   margin: 1rem 0 0.5rem 0;
   display: flex;
   flex-direction: column;
- }
- #contact .radio{
+}
+#contact .radio {
   flex-direction: row;
   justify-content: space-evenly;
- }
+}
 
- /* ajout annonce  */
-.formAjout{
+/* ajout modificatin annonce  */
+.formAjout,
+.formEdit {
   align-items: start;
 }
-#description{
+#description {
   width: 30rem;
   height: 10rem;
 }
 
-
-.formAjout .locVent, .formAjout .annulAjout{
+.formAjout .locVent,
+.formAjout .annulAjout, .formEdit .locVent, .formEdit .annulModif {
   flex-direction: row;
   justify-content: space-between;
 }
 
+/* admin index */
+.admin {
+  margin: 1rem;
+}
+
+.adminTable {
+  border-collapse: collapse;
+  border: 1px solid var(--color-onelight);
+}
+.adminTable th {
+  background-color: var(--color-six);
+}
+.adminTable tr {
+  border: 1px solid var(--color-onelight);
+}
+.adminTable td {
+  padding: 1rem;
+}
 
 /* footer */
 footer {

@@ -10,8 +10,8 @@
 
 <body>
     <main class="container">
-        <h2>Modification d'une Annonce</h2>
-        <form method="POST" action="" enctype="multipart/form-data" class="form" novalidate>
+        <h1>Modification d'une Annonce</h1>
+        <form method="POST" action="" enctype="multipart/form-data" class="formEdit" novalidate>
             <div>
                 <label for="title">Titre de l'annonce :</label>
                 <input type="text" name="title" id="title" value="<?= $title ?>" placeholder="<?= $title ?>">
@@ -24,7 +24,7 @@
                 <label for="imageUpload">Image :</label>
                 <input type="file" name="imageUpload" id="imageUpload" value="<?= $imageUpload ?>">
             </div>
-            <div>
+            <div class="locVent">
                 <label for="type">Type de transaction :</label>
                 Vente <input type="radio" name="type" id="type" value="Vente" checked>
                 Location <input type="radio" name="type" id="type" value="Location">
@@ -49,9 +49,10 @@
                     <option value="5">5</option>
                 </select>
             </div>
-            <div>
-                <input type="submit" name="ajout" value="Modifier">
-                <a href="../"><button type="button">Annuler</button></a>
+            <div class="annulModif">
+                <a href="../"><button class="btnInput" type="button">Annuler</button></a>
+                <input class="btn" type="submit" name="ajout" value="Modifier">
+
             </div>
             <?php if (!empty($errors)) : ?>
                 <div class="errors">

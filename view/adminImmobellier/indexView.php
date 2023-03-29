@@ -14,20 +14,20 @@
         <nav>
             <h1>Admin ImmoBellier</h1>
             <p>
-                <a href="../index.php">Accueil</a>
-                <a href="ajout.php">Ajouter une annonce</a>
+                <a class="btn"  href="../index.php">Accueil</a>
+                <a class="btn"  href="ajout.php">Ajouter une annonce</a>
             </p>
         </nav>
     </header>
     <main>
-        <section>
+        <section class="admin">
             <?php 
             if (count(getAnnonceLimit($limit, $offset)) != 0) : ?>
-                <table>
+                <table class="adminTable">
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Titre</th>
+                            <th>Titre de l'annonce</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -40,8 +40,8 @@
                                 <td><?= $value['id_annonce'] ?></td>
                                 <td><?= $value['title'] ?></td>
                                 <td>
-                                    <a href="./edit.php?id=<?= $value['id_annonce'] ?>">Modifier</a>
-                                    <a href="./supp.php?id=<?= $value['id_annonce'] ?>" onclick="return confirm('Confirmer la suppression de cette annonce ?');">Supprimer</a>
+                                    <a class="btn" href="./edit.php?id=<?= $value['id_annonce'] ?>">Modifier</a>
+                                    <a class="btnInput"  href="./supp.php?id=<?= $value['id_annonce'] ?>" onclick="return confirm('Confirmer la suppression de cette annonce ?');">Supprimer</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -52,9 +52,6 @@
             <?php endif; ?>
         </section>
     </main>
-    <footer>
-        <p>Amandine - 2023</p>
-    </footer>
 </body>
 
 </html>
