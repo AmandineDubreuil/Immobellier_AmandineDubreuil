@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
 
     if ($email) :
         if (chercheEmail($email)) :
-            if (password_verify($pwd, chercheEmail($email)['pwd'])) :
+            if (password_verify($pwd, chercheEmail($email)['password'])) :
                 $_SESSION['login'] = chercheEmail($email)['role'];
                 $_SESSION['id_utilisateur'] = chercheEmail($email)['id_utilisateur'];
 
