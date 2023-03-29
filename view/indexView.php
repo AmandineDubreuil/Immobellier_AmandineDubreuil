@@ -41,11 +41,13 @@
                 <p>Superficie : <?= $annonce['surface'] ?> m2</p>
                 <p>Nombre de pièces : <?= $annonce['room'] ?></p>
                 <p><span class="gras"> Prix : <?= $annonce['price'] ?> €</span> frais d'agence inclus</p>
+                <p class="italic">Mis en ligne : <?= $annonce['created_at'] ?> </p>
+                <p class="italic">Mis à jour : <?= $annonce['modified_at'] ?> </p>
             </article>
             <?php
                 endforeach;
             else :
-                echo 'Aucun article de disponible.';
+                echo 'Aucune annonce de disponible.';
             endif;
             ?>
 

@@ -48,7 +48,7 @@
                     </tbody>
                 </table>
             <?php else : ?>
-                <p>Aucune Formation !</p>
+                <p>Aucune Annonce !</p>
             <?php endif; ?>
         </section>
     </main>

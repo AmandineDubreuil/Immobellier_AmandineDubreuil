@@ -99,7 +99,7 @@ function isAdminConnected(): bool
 function getAnnonceLimit(int $limit, int $offset): array
 {
    require 'pdo.php';
-   $sqlRequest = "SELECT id_annonce, title, description, image, type, price, surface, room  FROM `annonces` WHERE 1 ORDER BY id_annonce ASC LIMIT :limit OFFSET :offset";
+   $sqlRequest = "SELECT id_annonce, title, description, image, type, price, surface, room, created_at, modified_at  FROM `annonces` WHERE 1 ORDER BY id_annonce ASC LIMIT :limit OFFSET :offset";
    $resultat = $conn->prepare($sqlRequest);
    $resultat->bindValue(':limit', $limit, PDO::PARAM_INT);
    $resultat->bindValue(':offset', $offset, PDO::PARAM_INT);
@@ -112,7 +112,7 @@ function getAnnonceLimit(int $limit, int $offset): array
 function insertAnnonce( $title,  $description,  $image,  $type,  $price,  $surface,  $room,  $id_utilisateur): int
 {
     require 'pdo.php';
-    $requete = 'INSERT INTO annonces (`title`, `description`, `image`, `type`, `price`, `surface`, `room`, `user_id`) VALUES (:title, :description, :image, :type, :price, :surface, :room, :id_utilisateur)';
+    $requete = 'INSERT INTO annonces (`title`, `description`, `image`, `type`, `price`, `surface`, `room`, `user_id`, created_at, modified_at) VALUES (:title, :description, :image, :type, :price, :surface, :room, :id_utilisateur, now(), now())';
     $resultat = $conn->prepare($requete);
     $resultat->bindValue(':title', $title, PDO::PARAM_STR);
     $resultat->bindValue(':description', $description, PDO::PARAM_STR);
@@ -183,12 +183,16 @@ function getAnnonceById(int $idAnnonce): array
 function updateAnnonce(int $id_annonce, string $title, string $description, string $image, string $type,  int $price, int $surface, int $room): bool
 {
    require 'pdo.php';
-   $requete = 'UPDATE annonces SET title = :title, description = :description,image = :image, type = :type, price = :price, surface = :surface, room = :room WHERE id_annonce = :id_annonce';
+   $requete = 'UPDATE annonces SET title = :title, description = :description,image = :image, type = :type, price = :price, surface = :surface, room = :room, modified_at = now() WHERE id_annonce = :id_annonce';
    $resultat = $conn->prepare($requete);
    $resultat->bindValue(':id_annonce', $id_annonce, PDO::PARAM_INT);
    $resultat->bindValue(':title', $title, PDO::PARAM_STR);
    $resultat->bindValue(':description', $description, PDO::PARAM_STR);
    $resultat->bindValue(':image', $image, PDO::PARAM_STR);
+   $resultat->bindValue(':type', $type, PDO::PARAM_STR);
+   $resultat->bindValue(':price', $price, PDO::PARAM_INT);
+   $resultat->bindValue(':surface', $surface, PDO::PARAM_INT);
+   $resultat->bindValue(':room', $room, PDO::PARAM_INT);
    $resultat->execute();
    return $resultat->execute();
 }
