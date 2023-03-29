@@ -26,6 +26,14 @@ function redirectUrl(string $path = ''): void
     exit();
 }
 
+function error404(): void
+{
+    http_response_code(404);
+    include('../view/404.php');
+    die();
+}
+
+
 /** pour bdd user */
 
 function nettoieChamps($valeur)
@@ -150,5 +158,37 @@ function suppAnnonceById(int $idAnnonce): bool
    $sqlRequest = "DELETE FROM annonces WHERE id_annonce = :idAnnonce";
    $resultat = $conn->prepare($sqlRequest);
    $resultat->bindValue(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
+   return $resultat->execute();
+}
+
+function isGetIdValid(): bool
+{
+   if (isset($_GET['id']) && is_numeric($_GET['id'])):
+      return true;
+   else:
+      return false;
+   endif;
+}
+
+function getAnnonceById(int $idAnnonce): array
+{
+   require 'pdo.php';
+   $sqlRequest = "SELECT * FROM annonces WHERE id_annonce = :idAnnonce";
+   $resultat = $conn->prepare($sqlRequest);
+   $resultat->bindValue(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
+   $resultat->execute();
+   return $resultat->fetch();
+}
+
+function updateAnnonce(int $id_annonce, string $title, string $description, string $image, string $type,  int $price, int $surface, int $room): bool
+{
+   require 'pdo.php';
+   $requete = 'UPDATE annonces SET title = :title, description = :description,image = :image, type = :type, price = :price, surface = :surface, room = :room WHERE id_annonce = :id_annonce';
+   $resultat = $conn->prepare($requete);
+   $resultat->bindValue(':id_annonce', $id_annonce, PDO::PARAM_INT);
+   $resultat->bindValue(':title', $title, PDO::PARAM_STR);
+   $resultat->bindValue(':description', $description, PDO::PARAM_STR);
+   $resultat->bindValue(':image', $image, PDO::PARAM_STR);
+   $resultat->execute();
    return $resultat->execute();
 }
