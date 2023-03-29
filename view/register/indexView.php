@@ -34,7 +34,7 @@
                 <input type="text" name="address" id="address" value="<?= $address ?>">
             </div>
             <div>
-                <label for="postal_code">Adresse *</label>
+                <label for="postal_code">Code Postal *</label>
                 <input type="text" name="postal_code" id="postal_code" value="<?= $postal_code ?>">
             </div>
 
@@ -43,7 +43,7 @@
                 <input type="text" name="town" id="town" value="<?= $town ?>">
             </div>
             <div>
-                <label for="phone">Adresse *</label>
+                <label for="phone">Téléphone *</label>
                 <input type="tel" name="phone" id="phone" value="<?= $phone ?>">
             </div>
             <div>
