@@ -18,6 +18,14 @@ function dd($valeur)
     die();
 }
 
+function redirectUrl(string $path = ''): void
+{
+   $homeUrl = 'http://' . $_SERVER['HTTP_HOST']. '/Immobellier' ;
+   $homeUrl .= '/'. $path;
+   header("Location: {$homeUrl}");
+   exit();
+}
+
 /** pour bdd user */
 
 function nettoieChamps($valeur)
@@ -61,10 +69,24 @@ function insertUtilisateur(string $last_name, string $first_name, string $email,
     return $conn->lastInsertId();
 }
 
-function redirectUrl(string $path = ''): void
+function isConnected(): bool
 {
-   $homeUrl = 'http://' . $_SERVER['HTTP_HOST']. '/Immobellier' ;
-   $homeUrl .= '/'. $path;
-   header("Location: {$homeUrl}");
-   exit();
+   if (isset($_SESSION['login']) && $_SESSION['login'] == true) :
+      return true;
+   else :
+      return false;
+   endif;
 }
+function isAdminConnected(): bool
+{
+   if (isset($_SESSION['login']) && $_SESSION['login'] === 'admin') :
+      return true;
+   else :
+      return false;
+   endif;
+}
+
+
+
+
+

@@ -14,15 +14,22 @@
         <nav>
             <h1>Immobellier</h1>
             <p>
-                <a href="./adminForma/index.php" role="button">Admin</a>
-                <a href="./register/">Créer un compte</a>
-                <a href="./login/">Connexion</a>
-                <a href="./login/">Déconnexion</a>
+                <?php if (isConnected()) : ?>
+                    <?php if (isAdminConnected()) : ?>
+                        <a href="./adminImmobellier/index.php" role="button">Admin</a>
+                    <?php endif ?>
+                    <a href="./login/deconnexion.php">Déconnexion</a>
+                <?php else : ?>
+                    <a href="./register/">Créer un compte</a>
+                    <a href="./login/">Connexion</a>
+                <?php endif ?>
             </p>
         </nav>
     </header>
     <main>
+    <?php if (isConnected()) : ?>
         <div><a href="">Ajouter un bien</a></div>
+        <?php endif ?>
         <section>
             <article>
                 <h2>Bien <span>loc/vente</span></h2>
