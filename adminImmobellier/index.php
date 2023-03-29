@@ -8,4 +8,4 @@ include '../inc/fonctions.php';
 $limit = 10;
 $offset = 0;
 
-require '../view/adminForma/indexView.php';
+require '../view/adminImmobellier/indexView.php';

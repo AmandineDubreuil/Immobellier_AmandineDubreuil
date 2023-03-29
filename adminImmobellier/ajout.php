@@ -1,27 +1,43 @@
 <?php
 /*
-* Ajout d'une formation
+* Ajout d'une annonce
 */
 session_start();
 include '../inc/fonctions.php';
 
 (isConnected()) ?: redirectUrl('view/404.php');
+//dd($_SESSION['id_utilisateur']);
 
-
-$titre = $description = $imageUpload = '';
+$title = $description = $imageUpload = $type = $price = $surface = $room = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["ajout"])) :
 
-    //imageUpload($imageUpload);
-    //dd($target_file);
-    $titre = cleanData($_POST['titre']);
-    $imageUpload = cleanData($_POST['imageUpload']);
-    $description = cleanData($_POST['description']);
+    uploadImage($_FILES["imageUpload"]["name"]);
+    $imageName = $_FILES["imageUpload"]["name"];
 
-        insertFormation($titre, $description, $imageUpload);
+    $title = nettoieChamps($_POST['title']);
+    // image
+    if ($imageName) :
+        $image = "./uploads/" . basename($_FILES["imageUpload"]["name"]);
+    else :
+        $image = "";
+    endif;
 
-    redirectUrl('adminForma/index.php');
+    $description = nettoieChamps($_POST['description']);
+    $type = nettoieChamps($_POST['type']);
+    $price = nettoieChamps($_POST['price']);
+    $surface = nettoieChamps($_POST['surface']);
+    $room = nettoieChamps($_POST['room']);
+
+    insertAnnonce($title, $description, $image, $type, $price, $surface, $room, $_SESSION['id_utilisateur']);
+
+    if ($_SESSION['login'] === 'user') :
+        redirectUrl('');
+    else :
+        //dd($_SESSION); ./adminImmobellier/
+        redirectUrl('');
+    endif;
 
 endif;
 
-require '../view/adminForma/ajoutView.php';
+require '../view/adminImmobellier/ajoutView.php';

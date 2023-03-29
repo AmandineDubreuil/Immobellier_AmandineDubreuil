@@ -28,7 +28,7 @@
     </header>
     <main>
     <?php if (isConnected()) : ?>
-        <div><a href="">Ajouter un bien</a></div>
+        <div><a href="./adminImmobellier/ajout.php">Nouvelle annonce</a></div>
         <?php endif ?>
         <section>
             <article>

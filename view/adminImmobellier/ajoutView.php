@@ -26,8 +26,8 @@
             </div>
             <div>
                 <label for="type">Type de transaction :</label>
-                User <input type="radio" name="type" id="type" value="Vente" checked>
-                Admin <input type="radio" name="type" id="type" value="Location">
+                Vente <input type="radio" name="type" id="type" value="Vente" checked>
+                Location <input type="radio" name="type" id="type" value="Location">
             </div>
 
             <div>
@@ -40,7 +40,7 @@
             </div>
             <div>
                 <label for="room">Nombre de pièces :</label>
-                <select name="romm" id="room">
+                <select name="room" id="room">
                     <option value="">--Merci de choisir une option--</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -51,7 +51,7 @@
             </div>
             <div>
                 <input type="submit" name="ajout" value="Ajouter">
-                <a href="./"><button type="button">Annuler</button></a>
+                <a href="../"><button type="button">Annuler</button></a>
             </div>
             <?php if (!empty($errors)) : ?>
                 <div class="errors">
