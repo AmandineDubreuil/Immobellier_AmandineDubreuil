@@ -21,9 +21,9 @@
                     <?php if (isAdminConnected()) : ?>
                         <a class="btn"  href="./adminImmobellier/index.php" role="button">Admin</a>
                     <?php endif ?>
-                    <a class="btnInput"  href="./login/deconnexion.php">Déconnexion</a>
+                    <a class="btnInput"  href="./login/deconnexion.php">Se déconnecter</a>
                 <?php else : ?>
-                    <a class="btnInput" href="./login/">Connexion</a>
+                    <a class="btnInput" href="./login/">Se connecter</a>
                     <a class="btnInput"  href="./register/">Créer un compte</a>
                  
                 <?php endif ?>
@@ -34,7 +34,7 @@
     </header>
     <main>
     <?php if (isConnected()) : ?>
-        <div><a class="btn" href="./adminImmobellier/ajout.php">Nouvelle annonce</a></div>
+        <div><a class="btn" href="./adminImmobellier/ajout.php">Ajouter une annonce</a></div>
         <?php endif ?>
         <section class="section">
         <?php
